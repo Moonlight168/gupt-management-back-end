@@ -1,0 +1,77 @@
+server:
+  port: 8088
+  address: localhost
+spring:
+#  profiles:
+#    active: local
+  application:
+    name: university-service
+  datasource:
+    url: ${gupt.db.url}
+    username: ${gupt.db.username}
+    password: ${gupt.db.password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  elasticsearch:
+    rest:
+      uris: 192.168.0.133  # ES地址
+      port: 9200
+      cluster-name: university-cluster
+      cluster-nodes: 192.168.0.133
+      connection-timeout: 5000      # 连接超时（毫秒）
+      read-timeout: 10000           # 读取超时（毫秒）
+  data:
+    redis:
+      database: ${gupt.redis.database}
+      port: ${gupt.redis.port}
+      host: ${gupt.redis.host}
+      password: ${gupt.redis.password}
+  jackson:
+    default-property-inclusion:
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+gupt:
+  jwt:
+    # 设置jwt签名加密时使用的秘钥
+    admin-secret-key: hjf
+    # 设置jwt过期时间
+    admin-ttl: 7200000
+    # 设置前端传递过来的令牌名称
+    admin-token: token
+
+    # 设置教师端的jwt令牌
+    teacher-secret-key: hyl
+    teacher-ttl: 7200000
+    # 设置前端传递过来的令牌名称
+    teacher-token: token
+
+    # 设置学生端的jwt令牌
+    student-secret-key: hyl
+    student-ttl: 7200000
+    # 设置前端传递过来的令牌名称
+    student-token: token
+  db:
+    url: jdbc:mysql://192.168.0.133:3306/university_db?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123
+  redis:
+    database: 0
+    host: 192.168.0.133
+    port: 6379
+    password: 123
+
+aliyun:
+  endpoint: yourendpoint
+  region: yourregion
+  accessKeyId: yourid
+  accessKeySecret: yourkey
+  bucketName: gupt
+
+ollama:
+  server:
+    url: http://192.168.0.133:11434
+  dpr:
+    model: dpr-ctx_encoder-multiset-base

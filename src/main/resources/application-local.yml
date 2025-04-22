@@ -1,0 +1,12 @@
+gupt:
+  db:
+    url: jdbc:mysql://192.168.0.133:3306/university_db?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123
+  redis:
+    database: 0
+    host: 192.168.0.133
+    port: 6379
+    password: 123
+
+

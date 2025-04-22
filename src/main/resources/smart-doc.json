@@ -1,0 +1,10 @@
+{
+  "outPath": "./src/main/resources/static/doc",
+  "isStrict": false,
+  "projectName": "university-system",
+  "appToken": "8e84ebf9ae624182b18605dd28f691fe",
+  "openUrl": "http://192.168.0.133:7700/api",
+  "debugEnvName":"university-system-debug",
+  "replace": true,
+  "debugEnvUrl":"http://192.168.0.100:8088"
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.gupt.mapper.CourseMapper">
+
+    <resultMap id="BaseResultMap" type="edu.gupt.domain.po.Course">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="teacher" column="teacher_name" jdbcType="VARCHAR"/>
+            <result property="location" column="location" jdbcType="VARCHAR"/>
+            <result property="weekDay" column="week_day" jdbcType="INTEGER"/>
+            <result property="startSlot" column="start_slot" jdbcType="INTEGER"/>
+            <result property="endSlot" column="end_slot" jdbcType="INTEGER"/>
+            <result property="weeks" column="weeks" jdbcType="VARCHAR"/>
+    </resultMap>
+
+</mapper>

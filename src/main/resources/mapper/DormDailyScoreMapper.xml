@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.gupt.mapper.DormDailyScoreMapper">
+
+    <resultMap id="BaseResultMap" type="edu.gupt.domain.po.DormDailyScore">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="dormitory_id" column="dormitory_id" jdbcType="INTEGER"/>
+            <result property="dormitory_name" column="dormitory_name" jdbcType="VARCHAR"/>
+            <result property="score" column="score" jdbcType="DECIMAL"/>
+            <result property="date" column="date" jdbcType="DATE"/>
+            <result property="comment" column="comment" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="score_id" column="score_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,dormitory_id,dormitory_name,
+        score,date,comment,
+        create_time,update_time,score_id
+    </sql>
+</mapper>

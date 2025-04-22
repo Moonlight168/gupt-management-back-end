@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.gupt.mapper.GradeMapper">
+
+    <!-- 根据学生ID和学期获取成绩列表 -->
+    <select id="selectBySemester" resultType="edu.gupt.domain.po.Grade">
+        SELECT
+            id, student_id, student_name, course_id, course_name,
+            score, credit, semester, academic_year, term,
+            grade_point, exam_time, create_time, update_time
+        FROM grade
+        WHERE student_id = #{studentId}
+          AND semester = #{semester}
+        ORDER BY update_time DESC
+    </select>
+
+    <!-- 获取学生的平均绩点 -->
+    <select id="selectAvgGpa" resultType="java.lang.Double">
+        SELECT
+        ROUND(SUM(grade_point * credit) / SUM(credit), 2) as avg_gpa
+        FROM grade
+        WHERE student_id = #{studentId}
+        <if test="semester != null and semester != ''">
+            AND semester = #{semester}
+        </if>
+    </select>
+
+    <!-- 批量插入成绩 -->
+    <insert id="batchInsert">
+        INSERT INTO grade (
+        student_id, student_name, course_id, course_name,
+        score, credit, semester, academic_year, term,
+        grade_point, exam_time, create_time, update_time
+        ) VALUES
+        <foreach collection="grades" item="grade" separator=",">
+            (
+            #{grade.studentId}, #{grade.studentName}, #{grade.courseId}, #{grade.courseName},
+            #{grade.score}, #{grade.credit}, #{grade.semester}, #{grade.academicYear}, #{grade.term},
+            #{grade.gradePoint}, #{grade.examTime}, NOW(), NOW()
+            )
+        </foreach>
+    </insert>
+</mapper>

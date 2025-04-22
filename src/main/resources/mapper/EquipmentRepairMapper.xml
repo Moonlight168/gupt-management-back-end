@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.gupt.mapper.EquipmentRepairMapper">
+
+    <resultMap id="BaseResultMap" type="edu.gupt.domain.po.EquipmentRepair">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="dormitory_id" column="dormitory_id" jdbcType="INTEGER"/>
+            <result property="building" column="building" jdbcType="VARCHAR"/>
+            <result property="room" column="room" jdbcType="VARCHAR"/>
+            <result property="repair_type" column="repair_type" jdbcType="VARCHAR"/>
+            <result property="content" column="content" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="VARCHAR"/>
+            <result property="submit_time" column="submit_time" jdbcType="TIMESTAMP"/>
+            <result property="finish_time" column="finish_time" jdbcType="TIMESTAMP"/>
+            <result property="comment" column="comment" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,dormitory_id,building,
+        room,repair_type,content,
+        status,submit_time,finish_time,
+        comment
+    </sql>
+</mapper>

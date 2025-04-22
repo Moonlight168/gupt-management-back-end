@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.gupt.mapper.DormitoryMapper">
+
+    <resultMap id="BaseResultMap" type="edu.gupt.domain.po.Dormitory">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="building" column="building" jdbcType="VARCHAR"/>
+            <result property="room" column="room" jdbcType="VARCHAR"/>
+            <result property="current_score" column="current_score" jdbcType="INTEGER"/>
+            <result property="last_month_rank" column="last_month_rank" jdbcType="INTEGER"/>
+            <result property="comment" column="comment" jdbcType="VARCHAR"/>
+            <result property="member" column="member" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,building,room,
+        current_score,last_month_rank,comment,
+        member
+    </sql>
+</mapper>

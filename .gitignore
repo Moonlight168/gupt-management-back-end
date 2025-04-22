@@ -1,0 +1,20 @@
+# 项目排除路径
+/target/
+
+# 忽略所有 .log 文件
+*.log
+
+# 忽略整个 node_modules 目录
+node_modules/
+
+# 忽略特定文件
+/src/main/resources/knowledge.txt
+/src/main/java/edu/gupt/domain/details/TeacherDetails.java
+/src/main/java/edu/gupt/config/DPRConfig.java
+/src/main/java/edu/gupt/config/RocketMQConfig.java
+/universitymanagementsystem.iml
+
+# 忽略整个特定目录
+/src/test
+/src/main/resources/static
+

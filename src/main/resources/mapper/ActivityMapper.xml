@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.gupt.mapper.ActivityMapper">
+
+    <resultMap id="BaseResultMap" type="edu.gupt.domain.po.Activity">
+            <id property="activityid" column="id" jdbcType="INTEGER"/>
+            <result property="title" column="Title" jdbcType="VARCHAR"/>
+            <result property="content" column="Content" jdbcType="VARCHAR"/>
+            <result property="eventdate" column="EventDate" jdbcType="DATE"/>
+            <result property="photourl" column="PhotoUrl" jdbcType="VARCHAR"/>
+            <result property="typeid" column="TypeID" jdbcType="INTEGER"/>
+            <result property="location" column="Location" jdbcType="VARCHAR"/>
+            <result property="author" column="author" jdbcType="VARCHAR"/>
+            <result property="date" column="date" jdbcType="DATE"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ActivityID,Title,Content,
+        EventDate,PhotoUrl,TypeID,
+        Location,author,date
+    </sql>
+</mapper>

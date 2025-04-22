@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="a0443f7f-07b3-48e4-a564-42fdc0128c51" name="gupt Mapping">
+      <data-sources db="93b196be-c8ec-4bdd-89d8-1dd38d68d15c" />
+      <scope>
+        <node kind="schema" qname="university_db" />
+      </scope>
+    </mapping>
+  </component>
+</project>

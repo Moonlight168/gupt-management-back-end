@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.gupt.mapper.NoticeMapper">
+
+    <resultMap id="BaseResultMap" type="edu.gupt.domain.po.Notice">
+            <id property="noticeid" column="id" jdbcType="INTEGER"/>
+            <result property="title" column="Title" jdbcType="VARCHAR"/>
+            <result property="content" column="Content" jdbcType="VARCHAR"/>
+            <result property="date" column="Date" jdbcType="TIMESTAMP"/>
+            <result property="typeid" column="TypeID" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        NoticeID,Title,Content,
+        Date,TypeID
+    </sql>
+</mapper>

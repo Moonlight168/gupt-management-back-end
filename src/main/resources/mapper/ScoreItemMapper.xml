@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.gupt.mapper.ScoreItemMapper">
+
+    <resultMap id="BaseResultMap" type="edu.gupt.domain.po.ScoreItem">
+            <id property="item_id" column="item_id" jdbcType="BIGINT"/>
+            <result property="score_id" column="score_id" jdbcType="BIGINT"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="grade" column="grade" jdbcType="CHAR"/>
+            <result property="points" column="points" jdbcType="INTEGER"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+            <result property="image_url" column="image_url" jdbcType="VARCHAR"/>
+            <result property="created_at" column="created_at" jdbcType="TIMESTAMP"/>
+            <result property="updated_at" column="updated_at" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        item_id,score_id,name,
+        grade,points,remark,
+        image_url,created_at,updated_at
+    </sql>
+</mapper>
